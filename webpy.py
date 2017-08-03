@@ -8,7 +8,7 @@ urls =(
 class hello:
 	def GET(self):
 		web.header('Content-Type', 'text/html; charset=UTF-8')
-		return "hello, world!"
+		return "hello, world,This is a Test!"
 
 class world:
     def GET(self):

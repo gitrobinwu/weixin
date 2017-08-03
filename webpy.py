@@ -13,7 +13,7 @@ class hello:
 class world:
     def GET(self):
         web.header('Content-Type','text/html; charset=UTF-8')
-        return "This is A test!"
+        return "111111111111111111!"
     
 app = web.application(urls,globals())
 if __name__ == '__main__':

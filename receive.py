@@ -32,6 +32,7 @@ class TextMsg(Msg):
 	def __init__(self,xmlData):
 		print "888888888888888888888"
 		super(TextMsg,self).__init__(xmlData)
+		print "00000000000000000000000"
 		self.Content = xmlData.find('Content').text.encode('utf-8')
 
 class ImageMsg(Msg):

@@ -23,9 +23,13 @@ class Msg(object):
 	def __init__(self,xmlData):
 		print "************************"
 		self.ToUserName = xmlData.find('ToUserName').text
+		print "***111111111"
 		self.FromUserName = xmlData.find('FromUserName').text
+		print "****2222222"
 		self.CreateTime = xmlData.find('CreateTime').text
+		print "****33333333"
 		self.MsgType = xmlData.find('MsgType').text
+		print "*****444444"
 		self.MsgId = xml.Data.find('MsgId').text 
 		print "9999999999999999999999999999"
 

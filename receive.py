@@ -14,6 +14,7 @@ def parse_xml(web_data):
 	if msg_type == 'text':
 		print "555555555555555555555"
 		textobj =  TextMsg(xmlData)
+		print textobj.Content,textobj.MsgType
 		print "6666666666666666666666"
 	elif msg_type == 'image':
 		return ImageMsg(xmlData)
@@ -25,6 +26,7 @@ class Msg(object):
 		self.CreateTime = xmlData.find('CreateTime').text
 		self.MsgType = xmlData.find('MsgType').text
 		self.MsgId = xml.Data.find('MsgId').text 
+		print "9999999999999999999999999999"
 
 class TextMsg(Msg):
 	def __init__(self,xmlData):

@@ -61,14 +61,20 @@ class Handle(object):
 				print '22222222222222222222222222222222222'
 				toUser = recMsg.FromUserName
 				fromUser = recMsg.ToUserName
+				
+				if recMsg.MsgType == "text":
+					content = recMsg.Content
+					replyMsg = reply.TextMsg(toUser,fromUser,content)
+					# 被动回复消息	
+					return replyMsg.send()
+				else if recMsg.MsgType == "image":
+					mediaId = recMsg.MediaId
+					replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
+					return replyMsg.send() 
 
-				content = "test"
-				replyMsg = reply.TextMsg(toUser,fromUser,content)
-				# 被动回复消息	
-				return replyMsg.send()
 			else:
 				print u"暂不处理"
-				return "success"
+				return reply.Msg().send() 
 		except Exception,Argment:
 			return Argment
 

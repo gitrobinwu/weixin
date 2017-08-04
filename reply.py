@@ -52,4 +52,3 @@ class ImageMsg(Msg):
 		return XmlForm.format(**self.__dict)
 
 
-

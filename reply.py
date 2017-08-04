@@ -31,7 +31,7 @@ class TextMsg(Msg):
 class ImageMsg(Msg):
 	def __init__(self,toUserName,fromUserName,mediaId):
 		print "@@@@@@@@@11111111111"
-		self.__dict == dict()
+		self.__dict = dict()
 		self.__dict['ToUserName'] = toUserName
 		self.__dict['FromUserName'] = fromUserName
 		self.__dict['CreateTime'] = int(time.time())

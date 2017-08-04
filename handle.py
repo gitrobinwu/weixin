@@ -73,7 +73,9 @@ class Handle(object):
 					print MediaId
 					replyMsg = reply.ImageMsg(toUser,fromUser,MediaId)
 					print "BBBBBBBBBBBBBBBBBBBBB"
-					return replyMsg.send() 
+					replyMsg = replyMsg.send()
+					print replyMsg
+					return replyMsg
 				else:
 					return reply.Msg().send()
 

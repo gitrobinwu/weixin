@@ -50,6 +50,8 @@ class Handle(object):
 			print 'Handle Post webdata is ',webData # 后台打印日志
 			# 解析xml 
 			recMsg = receive.parse_xml(webData)
+            
+            print "type(recMsg): %s, content_type: %s, content: %s " % (type(recMsg),recMsg.MsgType, recMsg.Content)
 			# 文本消息
 			if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
 				print '22222222222222222222222222222222222'

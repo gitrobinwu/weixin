@@ -13,9 +13,7 @@ def parse_xml(web_data):
 	print "444444444444444444444"
 	if msg_type == 'text':
 		print "555555555555555555555"
-		textobj =  TextMsg(xmlData)
-		print textobj.Content,textobj.MsgType
-		print "6666666666666666666666"
+		return TextMsg(xmlData)
 	elif msg_type == 'image':
 		return ImageMsg(xmlData)
 

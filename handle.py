@@ -49,8 +49,9 @@ class Handle(object):
 			webData = web.data()
 			print 'Handle Post webdata is ',webData # 后台打印日志
 			# 解析xml 
+			print "satrt ----- parse_xml --------"
 			recMsg = receive.parse_xml(webData)
-			
+			print "7777777777777777777777777"
 			print "-"*80
 			print recMsg,recMsg.MsgType,recMsg.Content
 			print "-"*80

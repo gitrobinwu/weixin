@@ -14,6 +14,7 @@ def parse_xml(web_data):
 	if msg_type == 'text':
 		print "555555555555555555555"
 		return TextMsg(xmlData)
+		print "6666666666666666666666"
 	elif msg_type == 'image':
 		return ImageMsg(xmlData)
 

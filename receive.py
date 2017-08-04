@@ -30,20 +30,21 @@ class Msg(object):
 		print "****33333333"
 		self.MsgType = xmlData.find('MsgType').text
 		print "*****444444"
-		self.MsgId = xml.Data.find('MsgId').text 
+		self.MsgId = xmlData.find('MsgId').text 
 		print "9999999999999999999999999999"
 
 class TextMsg(Msg):
 	def __init__(self,xmlData):
 		print "888888888888888888888"
-		Msg.__init__(self, xmlData)
+		super(TextMsg,self).__init__(xmlData)
 		print "&&&&&&&&&&&&&&&&&&&&"
 		self.Content = xmlData.find('Content').text.encode('utf-8')
 
 class ImageMsg(Msg):
 	def __init__(self,xmlData):
 		Msg.__init__(self, xmlData)
-		self.Content = xmlData.find('Content').text.encode('utf-8')
+		self.PicUrl = xmlData.find('Picurl').text
+		self.MediaId = xmlData.find('MediaId').text
 
 
 

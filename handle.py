@@ -52,6 +52,8 @@ class Handle(object):
 			recMsg = receive.parse_xml(webData)
             
             print "type(recMsg): %s, content_type: %s, content: %s " % (type(recMsg),recMsg.MsgType, recMsg.Content)
+            
+            print "-"*80
 			# 文本消息
 			if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
 				print '22222222222222222222222222222222222'

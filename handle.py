@@ -67,10 +67,12 @@ class Handle(object):
 					replyMsg = reply.TextMsg(toUser,fromUser,content)
 					# 被动回复消息	
 					return replyMsg.send()
-				else if recMsg.MsgType == "image":
+				elif recMsg.MsgType == "image":
 					mediaId = recMsg.MediaId
 					replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
 					return replyMsg.send() 
+				else:
+					return reply.Msg().send()
 
 			else:
 				print u"暂不处理"

@@ -44,6 +44,7 @@ class Handle(object):
 
 	def POST(self):
 		try:
+			print '111111111111111111111111111111111'
 			# web.data() 获取实体正文，只能用用POST请求包
 			webData = web.data()
 			print 'Handle Post webdata is ',webData # 后台打印日志
@@ -51,6 +52,7 @@ class Handle(object):
 			recMsg = receive.parse_xml(webData)
 			# 文本消息
 			if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+				print '22222222222222222222222222222222222'
 				toUser = recMsg.FromUserName
 				fromUser = recMsg.ToUserName
 

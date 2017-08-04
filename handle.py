@@ -69,8 +69,9 @@ class Handle(object):
 					return replyMsg.send()
 				elif recMsg.MsgType == "image":
 					print "AAAAAAAAAAAAAAAAAAAAAAA"
-					mediaId = recMsg.MediaId
-					replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
+					MediaId = recMsg.MediaId
+					print MediaId
+					replyMsg = reply.ImageMsg(toUser,fromUser,MediaId)
 					print "BBBBBBBBBBBBBBBBBBBBB"
 					return replyMsg.send() 
 				else:

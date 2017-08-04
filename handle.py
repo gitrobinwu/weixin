@@ -50,7 +50,7 @@ class Handle(object):
 			print 'Handle Post webdata is ',webData # 后台打印日志
 			# 解析xml 
 			recMsg = receive.parse_xml(webData)
-		
+			
 			print "-"*80
 			print recMsg,recMsg.MsgType,recMsg.Content
 			print "-"*80

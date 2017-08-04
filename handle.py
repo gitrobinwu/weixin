@@ -4,6 +4,8 @@
 import hashlib 
 import web
 import generate_token 
+import reply
+import receive 
 
 class Handle(object):
 	def GET(self):
@@ -39,5 +41,33 @@ class Handle(object):
 				return ""
 		except Exception,Argument:
 			return Argument
+
+	def POST(self):
+		try:
+			# web.data() 获取实体正文，只能用用POST请求包
+			webData = web.data()
+			print 'Handle Post webdata is ',webData # 后台打印日志
+			# 解析xml 
+			recMsg = receive.parse_xml(webData)
+			# 文本消息
+			if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+				toUser = recMsg.FromUserName
+				fromUser = recMsg.ToUserName
+
+				content = "test"
+				replyMsg = reply.TextMsg(toUser,fromUser,content)
+				# 被动回复消息	
+				return replyMsg.send()
+			else:
+				print u"暂不处理"
+				return "success"
+		except Exception,Argment:
+			return Argment
+
+
+			
+			
+if __name__ == '__main__':
+	print generate_token.hash
 
 

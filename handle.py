@@ -57,7 +57,7 @@ class Handle(object):
 			print "-"*80
 
 			# 文本消息
-			if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+			if isinstance(recMsg, receive.Msg):
 				print '22222222222222222222222222222222222'
 				toUser = recMsg.FromUserName
 				fromUser = recMsg.ToUserName
@@ -68,8 +68,10 @@ class Handle(object):
 					# 被动回复消息	
 					return replyMsg.send()
 				elif recMsg.MsgType == "image":
+					print "AAAAAAAAAAAAAAAAAAAAAAA"
 					mediaId = recMsg.MediaId
 					replyMsg = reply.ImageMsg(toUser,fromUser,mediaId)
+					print "BBBBBBBBBBBBBBBBBBBBB"
 					return replyMsg.send() 
 				else:
 					return reply.Msg().send()

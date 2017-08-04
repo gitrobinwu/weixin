@@ -16,9 +16,7 @@ def parse_xml(web_data):
 		return TextMsg(xmlData)
 	elif msg_type == 'image':
 		print "$$$$$$$111111111111"
-		imgobj =  ImageMsg(xmlData)
-		print imgobj.MsgType,imgobj.PicUrl,imgobj.MediaId
-		print "$$$$$$$ 4444444444444444"
+		return ImageMsg(xmlData)
 
 class Msg(object):
 	def __init__(self,xmlData):

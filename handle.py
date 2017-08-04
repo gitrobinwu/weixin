@@ -51,7 +51,9 @@ class Handle(object):
 			# 解析xml 
 			recMsg = receive.parse_xml(webData)
             
-            print "type(recMsg): %s, content_type: %s, content: %s " % (str(type(recMsg)),recMsg.MsgType, recMsg.Content)
+            print "-"*80
+            print recMsg
+            print "type(recMsg): %s, content_type: %s, content: %s " % (recMsg.MsgType, recMsg.Content)
             
             print "-"*80
 			# 文本消息

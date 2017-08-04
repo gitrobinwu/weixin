@@ -53,7 +53,7 @@ class Handle(object):
 			recMsg = receive.parse_xml(webData)
 			print "7777777777777777777777777"
 			print "-"*80
-			print recMsg,recMsg.MsgType,recMsg.Content
+			print recMsg,recMsg.MsgType
 			print "-"*80
 
 			# 文本消息

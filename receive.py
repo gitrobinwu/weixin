@@ -45,7 +45,7 @@ class ImageMsg(Msg):
 	def __init__(self,xmlData):
 		print "$$$$$$$$$$$22222222222"
 		Msg.__init__(self, xmlData)
-		self.PicUrl = xmlData.find('Picurl').text
+		self.PicUrl = xmlData.find('PicUrl').text
 		self.MediaId = xmlData.find('MediaId').text
 		print "$$$$$$$$$$$$$3333333333"
 

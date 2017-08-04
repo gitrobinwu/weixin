@@ -5,11 +5,14 @@ import xml.etree.ElementTree as ET
 def parse_xml(web_data):
 	if len(web_data) == 0:
 		return None 
-
+	
+	print "33333333333333333333333"
 	# 加载XML文件 
 	xmlData = ET.fromstring(web_data)
 	msg_type = xmlData.find('MsgType').text
+	print "444444444444444444444"
 	if msg_type == 'text':
+		print "555555555555555555555"
 		return TextMsg(xmlData)
 	elif msg_type == 'image':
 		return ImageMsg(xmlData)

@@ -7,6 +7,7 @@ import web
 import generate_token 
 import reply
 import receive 
+import tuling 
 
 class Handle(object):
 	def __init__(self):
@@ -89,10 +90,14 @@ class Handle(object):
 					content = recMsg.Content
 					if content.find("help") != -1:
 						print "4444444444444444444444"
-						content = "this is a test"*10 
-						return self.send_text(toUser,fromUser,content)	
+						response = "this is a test"*10 
+						return self.send_text(toUser,fromUser,response)	
+					if content.lower() == "m":
+						pass 
+					
+					response= tuling.reply_text(content) 	
 					print "55555555555555555555555555555555555"
-					return self.send_text(toUser,fromUser,content)	
+					return self.send_text(toUser,fromUser,response)	
 							
 				elif recMsg.MsgType == "image":
 					print "AAAAAAAAAAAAAAAAAAAAAAA"

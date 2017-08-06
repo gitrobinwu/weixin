@@ -95,6 +95,9 @@ class Handle(object):
 					if content.lower() == "m":
 						pass 
 					
+					if content.find(u"爱你"):
+						response = u"我爱范晶"
+						return self.send_text(toUser,fromUser,response)	
 					response= tuling.reply_text(content) 	
 					print "55555555555555555555555555555555555"
 					return self.send_text(toUser,fromUser,response)	

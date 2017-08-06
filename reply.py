@@ -17,6 +17,7 @@ class TextMsg(Msg):
 		self.__dict['Content'] = content
 
 	def send(self):
+		print "&&&&&&&&&&&&&&&&&&&&&&&7"
 		XmlForm = """
 		<xml>
 			<ToUserName><![CDATA[{ToUserName}]]></ToUserName>

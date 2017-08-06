@@ -18,7 +18,7 @@ class TextMsg(Msg):
 
 	def send(self):
 		print "&&&&&&&&&&&&&&&&&&&&&&&7"
-		XmlForm = """
+		XmlForm = u"""
 		<xml>
 			<ToUserName><![CDATA[{ToUserName}]]></ToUserName>
 			<FromUserName><![CDATA[{FromUserName}]]></FromUserName>
@@ -27,7 +27,9 @@ class TextMsg(Msg):
 			<Content><![CDATA[{Content}]]></Content>
 		</xml>
 		"""
+		print "@@@@@@222222222222222"
 		print "replay text:",XmlForm.format(**self.__dict)
+		print "@@@@@@@@@11111111111"
 		return XmlForm.format(**self.__dict)
 
 class ImageMsg(Msg):
@@ -41,7 +43,7 @@ class ImageMsg(Msg):
 		print "@@@@@@222222222222222"
 
 	def send(self):
-		XmlForm = """
+		XmlForm = u"""
 		<xml>
 			<ToUserName><![CDATA[{ToUserName}]]></ToUserName>
 			<FromUserName><![CDATA[{FromUserName}]]></FromUserName>

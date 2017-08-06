@@ -26,6 +26,7 @@ class TextMsg(Msg):
 			<Content><![CDATA[{Content}]]></Content>
 		</xml>
 		"""
+		print "replay text:\n"
 		print XmlForm.format(**self.__dict)
 		return XmlForm.format(**self.__dict)
 

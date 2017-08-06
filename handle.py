@@ -94,8 +94,7 @@ class Handle(object):
 						return self.send_text(toUser,fromUser,response)	
 					if content.lower() == "m":
 						pass 
-					
-					if content.find(u"爱你"):
+					if content.find(u"爱你") != -1:
 						response = u"我爱范晶"
 						return self.send_text(toUser,fromUser,response)	
 					response= tuling.reply_text(content) 	

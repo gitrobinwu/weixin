@@ -92,7 +92,7 @@ class Handle(object):
 						content = "this is a test"
 						return self.send_text(toUser,fromUser,content)	
 					print "55555555555555555555555555555555555"
-					return self.send_text(toUser,fromUser.content)
+					return self.send_text(toUser,fromUser,content)	
 							
 				elif recMsg.MsgType == "image":
 					print "AAAAAAAAAAAAAAAAAAAAAAA"

@@ -50,6 +50,7 @@ class Handle(object):
 
 	def send_text(self,touser,fromuser,content):
 		print "6666666666666666666666666"
+		print touser,fromuser,content 
 		replyMsg = reply.TextMsg(touser,fromuser,content).send() 
 		print "7777777777777777777777777777"
 		print replyMsg

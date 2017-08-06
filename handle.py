@@ -89,7 +89,7 @@ class Handle(object):
 					content = recMsg.Content
 					if content.find("help") != -1:
 						print "4444444444444444444444"
-						content = "this is a test"
+						content = "this is a test"*10 
 						return self.send_text(toUser,fromUser,content)	
 					print "55555555555555555555555555555555555"
 					return self.send_text(toUser,fromUser,content)	

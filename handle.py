@@ -48,7 +48,7 @@ class Handle(object):
 		except Exception,Argument:
 			return Argument
 
-	def send_text(touser,fromuser,content):
+	def send_text(self,touser,fromuser,content):
 		print "6666666666666666666666666"
 		replyMsg = reply.TextMsg(tousr,fromuser,content)
 		print replyMsg
@@ -88,9 +88,7 @@ class Handle(object):
 					if content.find("help") != -1:
 						print "4444444444444444444444"
 						content = u'''1.输入中文或者英文返回对应的英中翻译\n2.输入 book 要查询的书名 返回豆瓣图书中结果\n3.输入cls清除查询记录\n4.输入m随机来首音乐听，建议在wifi下听\n5.输入python 进入python常用模块用法查询（未完成）'''
-						replyMsg = self.send_text(toUser,fromUser,content)	
-						print 'replyMsg:',replyMsg
-						return replyMsg
+						return self.send_text(toUser,fromUser,content)	
 					print "55555555555555555555555555555555555"
 					return self.send_text(toUser,fromUser.content)
 							

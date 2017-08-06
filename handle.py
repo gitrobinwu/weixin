@@ -75,7 +75,7 @@ class Handle(object):
 						return self.send_text(toUser,fromUser,content)
 		
 					if recMsg.Event == "unsubscribe":
-						content = u"欢迎您再来":
+						content = u"欢迎您再来"
 						return self.send_text(toUser,fromUser,content)
 
 				if recMsg.MsgType == "text":

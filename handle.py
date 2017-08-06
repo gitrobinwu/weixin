@@ -8,6 +8,11 @@ import reply
 import receive 
 
 class Handle(object):
+	def __init__(self):
+		self.app_root = os.path.dirname(__file__)
+		self.templates_root = os.path.json(self.app_root,'templates')
+		self.render = web.template.render(self.templates_root)
+
 	def GET(self):
 		try:
 			# 接收数据[不确定是谁发过来的]
@@ -42,10 +47,12 @@ class Handle(object):
 		except Exception,Argument:
 			return Argument
 
+	def send_text(touser,fromuser,content):
+		replyMsg = reply.TextMsg(tousr,fromuser,content)
+		return replyMsg
+
 	def POST(self):
 		try:
-			print '111111111111111111111111111111111'
-			# web.data() 获取实体正文，只能用用POST请求包
 			webData = web.data()
 			print 'Handle Post webdata is ',webData # 后台打印日志
 			# 解析xml 
@@ -61,12 +68,24 @@ class Handle(object):
 				print '22222222222222222222222222222222222'
 				toUser = recMsg.FromUserName
 				fromUser = recMsg.ToUserName
-				
+			
+				if recMsg.MsgType == "event":
+					if recMsg.Event == "subscribe":
+						content = u"欢迎关注本微信"
+						return self.send_text(toUser,fromUser,content)
+		
+					if recMsg.Event == "unsubscribe":
+						content = u"欢迎您再来":
+						return self.send_text(toUser,fromUser,content)
+
 				if recMsg.MsgType == "text":
+					# 文本消息处理
 					content = recMsg.Content
-					replyMsg = reply.TextMsg(toUser,fromUser,content)
-					# 被动回复消息	
-					return replyMsg.send()
+					if content.find("help") != -1:
+						help = u'''1.输入中文或者英文返回对应的英中翻译\n2.输入 book 要查询的书名 返回豆瓣图书中结果\n3.输入cls清除查询记录\n4.输入m随机来首音乐听，建议在wifi下听\n5.输入python 进入python常用模块用法查询（未完成）'''
+						return self.send_text(toUser,fromUser.content)	
+					return self.send_text(toUser,fromUser.content)
+							
 				elif recMsg.MsgType == "image":
 					print "AAAAAAAAAAAAAAAAAAAAAAA"
 					MediaId = recMsg.MediaId

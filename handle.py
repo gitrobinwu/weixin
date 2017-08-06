@@ -49,7 +49,9 @@ class Handle(object):
 			return Argument
 
 	def send_text(touser,fromuser,content):
+		print "6666666666666666666666666"
 		replyMsg = reply.TextMsg(tousr,fromuser,content)
+		print replyMsg
 		return replyMsg
 
 	def POST(self):

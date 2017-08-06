@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*- 
 # filename: handle.py 
 import os 
+import json 
 import hashlib 
 import web
 import generate_token 

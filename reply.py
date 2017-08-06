@@ -26,8 +26,8 @@ class TextMsg(Msg):
 			<Content><![CDATA[{Content}]]></Content>
 		</xml>
 		"""
-	print self.__dict 
-	return XmlForm.format(**self.__dict)
+		print self.__dict 
+		return XmlForm.format(**self.__dict)
 
 class ImageMsg(Msg):
 	def __init__(self,toUserName,fromUserName,mediaId):

@@ -39,9 +39,9 @@ def get_musiclist():
 			song_link = song_data.get('songLink')
 			song_description = u"我爱范晶"
 			#print song_name+'--'+song_artistName+'.'+song_format+u'下载链接为：'+song_link
-			#file = urllib.urlretrieve(song_link,"./songs/%s.mp3" % song_name)
+			urllib.urlretrieve(song_link,"./songs/%s.mp3" % song_name)
 			#print file 
-			musicList.append([song_link,song_name,song_description])
+			#musicList.append([song_link,song_name,song_description])
 		return musicList 
 	except urllib2.URLError,e:
 		if hasattr(e,"code"):

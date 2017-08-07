@@ -5,7 +5,12 @@ from handle import Handle
 
 urls = (
 	'/wx','Handle',
+	'/(.*.mp3)','StaticFile'
 )
+
+class StaticFile:
+	def GET(self,file):
+		web.seeother('/static/'+file)
 
 app = web.application(urls,globals())
 

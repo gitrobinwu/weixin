@@ -107,7 +107,9 @@ class Handle(object):
 						music_des = music[2]
 						print "mmmmmmm 2222222222222"
 						#$def with(toUser,fromUser,createTime,musicTitle,musicDes,musicURL)
-						return self.render.repy_music(toUser,fromUser,int(time.time(),music_title,music_des,music_url))
+						music_xml =self.render.repy_music(toUser,fromUser,int(time.time(),music_title,music_des,music_url))
+						print music_xml
+						return music_xml
 
 					if content.find("爱你") != -1:
 						response = u"我爱范晶"

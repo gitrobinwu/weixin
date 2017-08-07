@@ -99,6 +99,7 @@ class Handle(object):
 						musicList = musiclist.get_musiclist()
 						print "mmmmm 33333333333333"
 						music = random.choice(musicList)
+						print "mmmmmm 444444444444"
 						print music
 						music_url = music[0]
 						music_title = music[1]

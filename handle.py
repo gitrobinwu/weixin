@@ -144,6 +144,6 @@ class Handle(object):
 if __name__ == '__main__':
 	#print generate_token.hash
 	#Handle().test() 	
-	print musiclist.get_musiclist()
+	print mlist.music_list()
 
 

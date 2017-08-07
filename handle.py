@@ -95,11 +95,14 @@ class Handle(object):
 						response = "this is a test"*10 
 						return self.send_text(toUser,fromUser,response)	
 					if content.lower() == "m":
+						print "mmmm 1111111111111111"
 						musicList = musiclist.get_musiclist()
 						music = random.choice(musicList)
 						music_url = music[0]
 						music_title = music[1]
 						music_des = music[2]
+						print music
+						print "mmmmmmm 2222222222222"
 						#$def with(toUser,fromUser,createTime,musicTitle,musicDes,musicURL)
 						return self.render.repy_music(toUser,fromUser,int(time.time(),music_title,music_des,music_url))
 

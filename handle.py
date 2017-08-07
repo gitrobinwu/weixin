@@ -10,6 +10,7 @@ import reply
 import receive 
 import tuling 
 import musiclist 
+import random 
 
 class Handle(object):
 	def __init__(self):

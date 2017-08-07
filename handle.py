@@ -9,7 +9,7 @@ import generate_token
 import reply
 import receive 
 import tuling 
-import musiclist 
+import mlist 
 import random 
 
 class Handle(object):
@@ -97,7 +97,7 @@ class Handle(object):
 						return self.send_text(toUser,fromUser,response)	
 					if content.lower() == "m":
 						print "mmmm 1111111111111111"
-						musicList = musiclist.get_musiclist()
+						musicList = mlist.music_list()
 						print "mmmmm 33333333333333"
 						music = random.choice(musicList)
 						print "mmmmmm 444444444444"

@@ -97,11 +97,12 @@ class Handle(object):
 					if content.lower() == "m":
 						print "mmmm 1111111111111111"
 						musicList = musiclist.get_musiclist()
+						print "mmmmm 33333333333333"
 						music = random.choice(musicList)
+						print music
 						music_url = music[0]
 						music_title = music[1]
 						music_des = music[2]
-						print music
 						print "mmmmmmm 2222222222222"
 						#$def with(toUser,fromUser,createTime,musicTitle,musicDes,musicURL)
 						return self.render.repy_music(toUser,fromUser,int(time.time(),music_title,music_des,music_url))
@@ -138,6 +139,7 @@ class Handle(object):
 			
 if __name__ == '__main__':
 	#print generate_token.hash
-	Handle().test() 	
+	#Handle().test() 	
+	print musiclist.get_musiclist()
 
 

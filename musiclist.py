@@ -2,7 +2,6 @@
 import urllib2
 import re
 import urllib
-import chardet
 from json import *
 
 category = '经典老歌'

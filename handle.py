@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*- 
 # filename: handle.py 
 import os 
+import time 
 import json 
 import hashlib 
 import web
@@ -8,6 +9,7 @@ import generate_token
 import reply
 import receive 
 import tuling 
+import musiclist 
 
 class Handle(object):
 	def __init__(self):
@@ -93,7 +95,14 @@ class Handle(object):
 						response = "this is a test"*10 
 						return self.send_text(toUser,fromUser,response)	
 					if content.lower() == "m":
-						pass 
+						musicList = musiclist.get_musiclist()
+						music = random.choice(musicList)
+						music_url = music[0]
+						music_title = music[1]
+						music_des = music[2]
+						#$def with(toUser,fromUser,createTime,musicTitle,musicDes,musicURL)
+						return self.render.repy_music(toUser,fromUser,int(time.time(),music_title,music_des,music_url))
+
 					if content.find("爱你") != -1:
 						response = u"我爱范晶"
 						return self.send_text(toUser,fromUser,response)	
@@ -119,10 +128,13 @@ class Handle(object):
 		except Exception,Argment:
 			return Argment
 
-
+	def test(self):
+		print self.render.reply_text("fromUser","toUser",int(time.time()),"this is a test")
+		print self.render.reply_music("fromUser","toUser",int(time.time()),"title","des","musicull")
 			
 			
 if __name__ == '__main__':
-	print generate_token.hash
+	#print generate_token.hash
+	Handle().test() 	
 
 
